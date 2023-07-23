@@ -1,23 +1,19 @@
-import { useState } from "react";
 import Input from "./Input";
 
-const ExpenseForm = () => {
-  const [amount, setAmount] = useState("");
-  const [description, setDescription] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic, e.g., send data to backend or update state
-    console.log("Expense Form Submitted:", amount, description);
-  };
-
+const ExpenseForm = ({
+  amount,
+  description,
+  handleSubmit,
+  setAmount,
+  setDescription,
+}) => {
   return (
     <form
       onSubmit={handleSubmit}
       className="bg-white p-4 shadow w-[400px] rounded-md"
     >
       <Input
-        label="Amount"
+        label="amount"
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
         type="number"

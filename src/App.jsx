@@ -1,21 +1,16 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import IncomePage from "./pages/IncomePage";
 import ExpensePage from "./pages/ExpensePage";
+import Navbar from "./components/Navbar";
+import HomePage from "./pages/HomePage";
 
 const App = () => {
   return (
     <Router>
-      <div className="navbar bg-base-100 shadow-sm justify-center fixed">
-        <Link className="btn btn-ghost normal-case text-xl" to="/income">
-          Income
-        </Link>
-
-        <Link className="btn btn-ghost normal-case text-xl" to="/expense">
-          Expense
-        </Link>
-      </div>
+      <Navbar />
 
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/income" element={<IncomePage />} />
         <Route path="/expense" element={<ExpensePage />} />
       </Routes>

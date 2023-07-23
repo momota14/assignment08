@@ -9,6 +9,8 @@ function Input({ label, value, onChange, type = "text" }) {
         value={value}
         onChange={onChange}
         className="w-full p-2 border rounded-md"
+        placeholder={label}
+        required
       />
     </div>
   );
