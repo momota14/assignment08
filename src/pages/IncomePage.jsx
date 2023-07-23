@@ -93,7 +93,7 @@ const IncomePage = () => {
   }
 
   return (
-    <div className="h-screen flex flex-col items-center justify-center mt-14 pt-14">
+    <div className="h-screen flex flex-col items-center justify-center mt-14 pt-14 mx-4">
       <h1 className="text-xl font-semibold mb-3">Income Page</h1>
       <IncomeForm
         amount={amount}
@@ -103,7 +103,7 @@ const IncomePage = () => {
         setDescription={setDescription}
       />
 
-      <div className="w-[400px] p-2 rounded-md shadow-md bg-white mt-2">
+      <div className="w-full sm:w-[400px] p-2 rounded-md shadow-md bg-white mt-2">
         <h1 className="text-2xl font-semibold mb-3">Income List</h1>
         {content}
       </div>

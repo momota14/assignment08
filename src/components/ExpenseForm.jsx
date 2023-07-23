@@ -10,7 +10,7 @@ const ExpenseForm = ({
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white p-4 shadow w-[400px] rounded-md"
+      className="bg-white p-4 shadow w-full sm:w-[400px] rounded-md"
     >
       <Input
         label="amount"

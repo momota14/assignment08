@@ -56,8 +56,8 @@ function HomePage() {
   }
 
   return (
-    <div className="h-screen flex flex-col items-center justify-center mt-14 pt-14">
-      <div className="w-[400px] p-2 rounded-md shadow-md bg-white">
+    <div className="h-screen flex flex-col items-center justify-center mt-14 pt-14 mx-4">
+      <div className="w-full sm:w-[400px] p-2 rounded-md shadow-md bg-white">
         <h1 className="text-2xl font-semibold mb-3">Transactions List</h1>
         {content}
       </div>
