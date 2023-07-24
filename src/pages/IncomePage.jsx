@@ -9,35 +9,34 @@ const IncomePage = () => {
 
   const type = "income";
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+   const handleSubmit = (e) => {
+     e.preventDefault();
 
-    const getItem = localStorage.getItem("transactions");
-    console.log(getItem);
+     const getItem = localStorage.getItem("transactions");
 
-    if (getItem !== null) {
-      const parseItem = JSON.parse(getItem);
-      const last = parseItem[parseItem.length - 1];
-      const jsonData = {
-        id: last.id + 1,
-        amount,
-        description,
-        type,
-      };
+     if (getItem === null) {
+       const jsonData = { id: 1, amount: Number(amount), description, type };
+       localStorage.setItem("transactions", JSON.stringify([jsonData]));
+       setItems([jsonData]);
+     } else {
+       const parseItem = JSON.parse(getItem);
+       const last = parseItem[parseItem.length - 1];
+       const jsonData = {
+         id: last.id + 1,
+         amount: Number(amount),
+         description,
+         type,
+       };
 
-      localStorage.setItem(
-        "transactions",
-        JSON.stringify([...JSON.parse(getItem), jsonData])
-      );
-      setItems([...items, jsonData]);
-    } else {
-      const jsonData = { id: 1, amount, description, type };
-      localStorage.setItem("transactions", JSON.stringify([jsonData]));
-      setItems([jsonData]);
-    }
-    setAmount("");
-    setDescription("");
-  };
+       localStorage.setItem(
+         "transactions",
+         JSON.stringify([...JSON.parse(getItem), jsonData])
+       );
+       setItems([...items, jsonData]);
+     }
+     setAmount("");
+     setDescription("");
+   };
 
   const removeItem = (id) => {
     const newItems = items.filter((item) => item.id !== id);

@@ -15,7 +15,7 @@ const ExpensePage = () => {
     const getItem = localStorage.getItem("transactions");
 
     if (getItem === null) {
-      const jsonData = { id: 1, amount, description, type };
+      const jsonData = { id: 1, amount: Number(amount), description, type };
       localStorage.setItem("transactions", JSON.stringify([jsonData]));
       setItems([jsonData]);
     } else {
@@ -23,7 +23,7 @@ const ExpensePage = () => {
       const last = parseItem[parseItem.length - 1];
       const jsonData = {
         id: last.id + 1,
-        amount,
+        amount: Number(amount),
         description,
         type,
       };
